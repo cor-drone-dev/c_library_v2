@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<mavlink>
+  <include>common.xml</include>
+  <!-- Custom tud_cor_drone_dev dialect -->
+  <dialect>3</dialect>
+  <!-- Custom enums -->
+  <enums>
+  </enums>
+  <!-- Custom messages -->
+  <messages>
+    <message id="229" name="HOVER_THRUST_ESTIMATE">
+      <wip/>
+      <!-- This message is work-in-progress it can therefore change, and should NOT be used in stable production environments -->
+      <description>Hover thrust estimate during flight.</description>
+      <field type="uint64_t" name="timestamp" units="us">Time since system start.</field>
+      <field type="uint64_t" name="timestamp_sample">Time of corresponding sensor data last used for this estimate.</field>
+      <field type="float" name="hover_thrust">Estimted hover thrust [0.1 0.9].</field>
+      <field type="float" name="hover_thrust_var">Estimated hover thrust variance.</field>
+      <field type="float" name="accel_innov">Innovation of the last acceleration.</field>
+      <field type="float" name="accel_innov_var">Innovation variance of the last acceleration fusion.</field>
+      <field type="float" name="accel_innov_test_ratio">Normalized innovation squared test ratio.</field>
+      <field type="float" name="accel_noise_var">Vertical accleration noise variance form innovation residual.</field>
+      <field type="uint8_t" name="valid" invalid="0">Boolean indicating whether the hover thrust estimate is valid or not (valid: 1, invalid: 0). Default is 0 (invalid).</field>
+    </message>
+  </messages>
+</mavlink>
